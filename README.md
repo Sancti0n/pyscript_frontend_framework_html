@@ -1,2 +1,2 @@
-# pyscript_frontend_framework_html
+# Pyscript frontend framework HTML
 Test, run Python in your HTML
