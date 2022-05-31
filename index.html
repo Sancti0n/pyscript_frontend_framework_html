@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <style>
+        #output {
+            color: rgb(31, 35, 221);
+            font-size: 70px;
+        }
+    </style>
+    <title>Title: PyScript</title>
+</head>
+<body>
+    <py-script> print("Hello, World!") </py-script>
+    <b><p>Today is <u><label id='today'></label></u></p></b>
+    <py-script>
+        import datetime as dt
+        pyscript.write('today', dt.date.today().strftime('%A %B %d, %Y'))
+    </py-script>
+    <h1>Let's print random numbers</h1>
+    <b>Doe's lucky number is <label id="lucky"></label></b>
+    <py-script>
+        from random import randint
+        
+        def add_two_numbers(x, y):
+            return x + y
+        def generate_random_number():
+            x = randint(0, 10)
+            return x
+        pyscript.write('lucky', generate_random_number())
+      </py-script>
+    <div id="output"></div>
+    
+    <py-script>
+        num = 7
+        factorial = 1
+        if num < 0:
+            pyscript.write('output', f'Sorry, factorial does not exist for negative numbers')
+        elif num == 0:
+            pyscript.write('output', f'The factorial of {num} is {factorial}')
+        else:
+            for i in range(1,num + 1):
+                factorial = factorial*i
+            pyscript.write('output', f'The factorial of {num} is {factorial}')
+    </py-script>
+    
+    <py-repl id="my-repl" auto-generate=true> </py-repl>
+  </body>
+</body>
+</html>
